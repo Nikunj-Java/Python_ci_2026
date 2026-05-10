@@ -22,3 +22,18 @@ jobs:
       run: pip install pytest
     - name: Run tests
       run: python test_file_writer.py
+    - name: Notify Success Via Email
+      if: success()
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 587
+        username: ganitniduniyanikunj10@gmail.com
+        password: jqbz kvfy bwpw pxdi
+        subject: "CI Build Success - ${{ github.repository }}"
+        body: |
+          The Build For ${{ github.repository }} on branch ${{ github.ref_name }} succeded.
+          Commit: ${{ github.sha }}
+        to: ganitniduniyanikunj10@gmail.com
+        from: ganitniduniyanikunj10@gmail.com
+
