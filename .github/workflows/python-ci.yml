@@ -61,6 +61,13 @@ jobs:
         body: |
           The Build For ${{ github.repository }} on branch ${{ github.ref_name }} succeded.
           Commit: ${{ github.sha }}
+           ✔  Test Cases Passed
+           ✔  ZIP Artifact Created
+           ✔  Artifact Uploaded Successfully
+
+           Download Artifact From:
+           ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
         to: ganitniduniyanikunj10@gmail.com
         from: ganitniduniyanikunj10@gmail.com
 
